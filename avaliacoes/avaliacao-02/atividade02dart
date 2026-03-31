@@ -1,0 +1,52 @@
+class EstruturaPilha {
+  List<int> _valores = [];
+
+  void adicionar(int numero) {
+    _valores.add(numero);
+    print("Valor $numero inserido na pilha.");
+  }
+
+  void remover() {
+    if (_valores.isEmpty) {
+      print("Não há elementos na pilha!");
+    } else {
+      int retirado = _valores.removeLast();
+      print("Valor retirado: $retirado");
+    }
+  }
+
+  void exibirTopo() {
+    if (_valores.isEmpty) {
+      print("A pilha está vazia!");
+    } else {
+      print("Elemento no topo: ${_valores.last}");
+    }
+  }
+
+  void listarElementos() {
+    if (_valores.isEmpty) {
+      print("Nenhum valor na pilha!");
+    } else {
+      print("Valores armazenados na pilha:");
+      for (int i = _valores.length - 1; i >= 0; i--) {
+        print(_valores[i]);
+      }
+    }
+  }
+}
+
+void main() {
+  EstruturaPilha minhaPilha = EstruturaPilha();
+
+  minhaPilha.adicionar(5);
+  minhaPilha.adicionar(15);
+  minhaPilha.adicionar(25);
+
+  minhaPilha.listarElementos();
+
+  minhaPilha.exibirTopo();
+
+  minhaPilha.remover();
+
+  minhaPilha.listarElementos();
+}
